@@ -1,0 +1,41 @@
+body {
+    background:	 #00e64d;
+    font-family: Optimal;
+}
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 285px;
+  margin: -140px 0 0 -182px;
+  padding: 40px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+ }
+
+ h2 {
+    margin: 0 0 20px;
+    line-height: 1;
+    color:#00e64d ;
+    font-size: 40px;
+    font-weight: 400;
+    }
+
+    input {
+    outline: none;
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    font-family: "Roboto";
+    box-sizing: border-box;
+    font-size: 14px;
+    font-wieght: 400;
+    transition: 0.2s linear;
+    &input:focus {
+      color: #333;
+      border: 1px solid #44c4e7;
+    }
+  }

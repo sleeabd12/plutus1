@@ -1,0 +1,43 @@
+h1, h2 {
+  color: light-gray
+  text-align: center
+  }
+h1 {
+  font-size: 2.5em
+  margin-top: 20px
+}
+h2 {
+  margin: 20px 0
+  font-weight: 100
+}
+
+body {
+  background: green
+  }
+
+table {
+  text-align: left
+  width: 640px
+  margin: 30px auto
+  border-radius: 3px
+  background-color: white
+    }
+
+  th {
+    padding: 10px
+}
+
+.amount {
+  color: red
+  text-align: right
+  }
+
+.center {
+    position: absolute
+    width: 1000px
+    height: 800px
+    left:50%
+    top:50%
+    margin-left:-200px
+    margin-top: -500px
+    }

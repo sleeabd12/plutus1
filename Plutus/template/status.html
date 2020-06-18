@@ -1,0 +1,575 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="jquery-1.3.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/test.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
+  <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> 
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <title>PLUTUS | Current Report </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+   
+    */
+    /* Add Animation */
+
+    @-webkit-keyframes slideLEFT {
+      from {
+        margin-left: -1500px;
+        opacity: 0
+      }
+
+      to {
+        margin-left: 0px;
+        opacity: 1
+      }
+    }
+
+    @-webkit-keyframes slideLEFTImg {
+      from {
+        margin-left: -1500px;
+        width: 0px;
+        opacity: 0
+      }
+
+      to {
+        margin-left: 0px;
+        width: 100%;
+        opacity: 1
+      }
+    }
+
+    @-webkit-keyframes slideLEFTCard {
+      from {
+        margin-left: -1500px;
+        width: 0px;
+        opacity: 0
+      }
+
+      to {
+        margin-left: 0px;
+        width: auto;
+        opacity: 1
+      }
+    }
+
+    @-webkit-keyframes width {
+      from {
+        width: 0px !important;
+        opacity: 0
+      }
+
+      to {
+        width: initial !important;
+        opacity: 1
+      }
+    }
+
+
+    @-webkit-keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    @keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    /* The Close Button */
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal-header {
+      color: #717171;
+      font-family: Raleway;
+      text-transform: uppercase;
+    }
+
+    .modal-body {
+      height: calc(100vh - 208px);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .modal-footer {
+      padding: 2px 16px;
+      background-color: #ffffff;
+      color: #717171;
+    }
+
+
+    /************Table *************/
+    #filterList {
+      background-image: url(/css/searchicon.png);
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      width: calc(100% - 23px);
+      font-family: Raleway;
+      font-size: 1.3rem;
+      padding: 12px 10px 12px 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+    #jiraworlog {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      font-size: 18px;
+    }
+
+    #jiraworlog th {
+      text-align: left;
+      padding: 12px;
+      font-family: Raleway;
+      font-size: 1.3rem;
+    }
+
+    #jiraworlog td {
+      text-align: left;
+      padding: 12px;
+      font-family: Roboto;
+      font-size: 1.3rem;
+    }
+
+    #jiraworlog tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    #jiraworlog tr.header,
+    #jiraworlog tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    #jiraworlog {
+      webkit-animation-name: slideLEFTImg;
+      -webkit-animation-duration: 0.4s;
+      animation-name: slideLEFTImg;
+      animation-duration: 0.4s
+    }
+
+    #orchestraworklog {
+      webkit-animation-name: slideLEFTImg;
+      -webkit-animation-duration: 0.4s;
+      animation-name: slideLEFTImg;
+      animation-duration: 0.4s
+    }
+
+    #orchestraworklog {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      font-size: 18px;
+    }
+
+    #orchestraworklog th {
+      text-align: left;
+      padding: 12px;
+      font-family: Raleway;
+      font-size: 1.3rem;
+    }
+
+    #orchestraworklog td {
+      text-align: left;
+      padding: 12px;
+      font-family: Roboto;
+      font-size: 1.3rem;
+    }
+
+    #orchestraworklog tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    #orchestraworklog tr.header,
+    #orchestraworklog tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    /****btns navigation popup**/
+    .btnContent {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .btnContent .selected {
+      background: #bbdefb;
+      transition: all 0.2s;
+    }
+
+    .undisplayed {
+      display: none;
+    }
+
+    .fromJirabtn,
+    .toOrchestrabtn {
+      width: 50%;
+      background: #f2f2f2;
+      padding: 10px;
+      font-family: Raleway;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    .btnContent:hover {
+      cursor: pointer;
+    }
+
+    /***Overflow***/
+
+    /*************************************scrollbar*******************************/
+    
+  </style>
+  <script>
+    window.console = window.console || function (t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+</head>
+
+<body translate="no">
+
+  <!-- <div id="ImportFromJira" class="modal"> -->
+
+  <!-- Header -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .header {
+      overflow: hidden;
+      background-color: #f1f1f1;
+      padding: 20px 10px;
+      bottom: 90px;
+    }
+
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+      bottom: 50px;
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .header a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        float: none;
+      }
+    }
+  </style>
+  </head>
+  <div class="header" bottom:20px>
+    <a href="http://127.0.0.1:8000/home" class="logo">PLUTUS</a>
+    <div class="header-right">
+      <a class="active" href="http://127.0.0.1:8000/actions">Actions</a>
+      <a href="http://127.0.0.1:8000/contact">Contact</a>
+      <a href="http://127.0.0.1:8000/logout">Logout</a>
+    </div>
+  </div>
+
+
+  <!-- End of header -->
+  <h2>Current Report</h2>
+  </div>
+  <div class="btnContent">
+    <div id="fromJirabtn" class="fromJirabtn selected" onclick="showFromJira()">Expenses </div>
+    <div id="toOrchestrabtn" class="toOrchestrabtn" onclick="showToOrchestra()">Incomes </div>
+  </div>
+  <div class="modal-body">
+
+    <div id="fromJira" class="fromJira">
+      <table id=jiraworlog class="table table-striped table-dark">
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
+        <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/test.js' %}"></script> -->
+        <thead>
+        <tr class="header">
+          <th style="width:20%;">Dept</th>
+          <th style="width:20%;">Name </th>
+          <th style="width:20%;">Date</th>
+          <th style="width:20%;">Amount</th>
+        </tr>
+        </thead>
+        <tr class="header">
+          <th style="width:20%;">Dept</th>
+          <th style="width:20%;">Name </th>
+          <th style="width:20%;">Date</th>
+          <th style="width:20%;">Amount</th>
+        </tr>
+        <tbody>
+        {% for t in expenses %}
+        <tr>
+          <td>{{t.Dept}}</td>
+          <td> {{t.Name}}</td>
+          <td> {{t.Date}}</td>
+          <td> {{t.Amount}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+      <button id="jjj" onclick="export_table_to_csv('Transaction Summary.csv')">Export to CSV file</button>
+
+    </div>
+    <div id="toOrchestra" class="toOrchestra undisplayed">
+
+
+      <!-- <input type="text" id="filterList" onkeyup="Filtertable()" placeholder="Search for names.."
+            title="Type in a name"> -->
+      <table id=orchestraworklog class="table table-striped table-dark">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/test.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
+        <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> -->
+          <tr class="header">
+            <th style="width:20%;">Type</th>
+            <th style="width:20%;">Name</th>
+            <th style="width:20%;">Date</th>
+            <th style="width:20%;">Amount</th>
+          </tr>
+
+          <thead>
+          <tr class="header">
+            <th style="width:20%;">Type</th>
+            <th style="width:20%;">Name</th>
+            <th style="width:20%;">Date</th>
+            <th style="width:20%;">Amount</th>
+          </tr>
+        </thead>
+          
+        <tbody>
+          {% for i in incomes %}
+          <tr>
+            <td>{{i.Type}}</td>
+            <td> {{i.Name}}</td>
+            <td> {{i.Date}}</td>
+            <td> {{i.Amount}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <button id="jjj" onclick="export_table_to_csv('Transaction Summary.csv')">Export to CSV file</button>
+
+
+      <!-- <input value="Export as CSV 2" type="button" onclick="$('#orchestraworklog').table2CSV({header:['type','name','date']})"> -->
+      <!-- <script>
+            function exportF(elem) {
+              debugger
+              var table = document.getElementById("orchestraworklog");
+              debugger
+              var html = table.outerHTML;
+              var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
+              elem.setAttribute("href", url);
+              elem.setAttribute("download", "export.xls"); // Choose the file name
+              return false;
+            }
+          </script> -->
+
+    </div>
+  </div>
+  </div>
+  </div>
+  <script
+    src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-30d18ea41045577cdb11c797602d08e0b9c2fa407c8b81058b1c422053ad8041.js">
+  </script>
+  <script id="rendered-js">
+    const modal = document.getElementById('ImportFromJira');
+    //on load
+    document.addEventListener("DOMContentLoaded", function (event) {
+      modal.style.display = "block";
+    });
+
+    /************filtertable********/
+     function Filtertable() {
+       var input, filter, table, tr, td, i ,t;
+       input = document.getElementById("filterList");
+       filter = input.value.toUpperCase();
+       table = document.getElementById("jiraworlog" , "orchestraworklog");
+       tr = table.getElementsByTagName("tr");
+       for (i = 0; i < tr.length; i++) {
+         if (window.CP.shouldStopExecution(0)) break;
+         td = tr[i].getElementsByTagName("td")[1];
+         if (td) {
+           if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+             tr[i].style.display = "";
+           } else {
+             tr[i].style.display = "none";
+           }
+         }
+       }
+       for (t = 0; t < tr.length; t++) {
+         if (window.CP.shouldStopExecution(0)) break;
+         td = tr[t].getElementsByTagName("td")[1];
+         if (td) {
+           if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+             tr[i].style.display = "";
+           } else {
+             tr[i].style.display = "none";
+           }
+         }
+       }
+       window.CP.exitedLoop(0);
+     }
+
+
+    /************to orchestra*************/
+    function showToOrchestra() {
+      document.getElementById('toOrchestra').classList.remove('undisplayed');
+      document.getElementById('toOrchestrabtn').classList.add('selected');
+
+      document.getElementById('fromJira').classList.add('undisplayed');
+      document.getElementById('fromJirabtn').classList.remove('selected');
+    }
+
+    function showFromJira() {
+      document.getElementById('toOrchestra').classList.add('undisplayed');
+      document.getElementById('toOrchestrabtn').classList.remove('selected');
+
+      document.getElementById('fromJira').classList.remove('undisplayed');
+      document.getElementById('fromJirabtn').classList.add('selected');
+    }
+    //# sourceURL=pen.js
+  </script>
+ <script>
+  $(document).ready(function () {
+    $('#jiraworlog').DataTable({
+      initComplete: function () {
+        this.api().columns().every(function () {
+          var column = this;
+          var select = $('<select><option value=""></option></select>')
+            .appendTo($(column.header()).empty())
+            .on('change', function () {
+              var val = $.fn.dataTable.util.escapeRegex(
+                $(this).val()
+              );
+
+              column
+                .search(val ? '^' + val + '$' : '', true, false)
+                .draw();
+            });
+
+          column.data().unique().sort().each(function (d, j) {
+            select.append('<option value="' + d + '">' + d + '</option>')
+          });
+        });
+      }
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $('#orchestraworklog').DataTable({
+      initComplete: function () {
+        this.api().columns().every(function () {
+          var column = this;
+          var select = $('<select><option value=""></option></select>')
+            .appendTo($(column.header()).empty())
+            .on('change', function () {
+              var val = $.fn.dataTable.util.escapeRegex(
+                $(this).val()
+              );
+
+              column
+                .search(val ? '^' + val + '$' : '', true, false)
+                .draw();
+            });
+
+          column.data().unique().sort().each(function (d, j) {
+            select.append('<option value="' + d + '">' + d + '</option>')
+          });
+        });
+      }
+    });
+  });
+</script>
+
+
+</body>
+
+</html>

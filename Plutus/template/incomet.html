@@ -1,0 +1,26 @@
+{% load static %}
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/test.js' %}" ></script>
+</head>
+<body>
+<table id=orchestraworklog>
+
+    <tr class="header">
+      <th style="width:20%;">Type</th>
+      <th style="width:20%;">Name</th>
+      <th style="width:20%;">Date</th>
+      <th style="width:20%;">Amount</th>
+    </tr>
+    {% for i in incomes %}
+    <tr>
+      <td>{{i.Type}}</td>
+      <td> {{i.Name}}</td>
+      <td> {{i.Date}}</td>
+      <td> {{i.Amount}}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <button id ="jjj" onclick="export_table_to_csv('test.csv')">Export HTML table to CSV file</button>
+</body>

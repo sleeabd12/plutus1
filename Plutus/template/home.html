@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns:background-image="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" >
+
+    <title>Plutus | Home</title>
+</head>
+<body>
+
+<div id="header">
+  <a href="/" id="logo">PLUTUS</a>
+  <ul id="menu">
+    <li><a href="http://127.0.0.1:8000/"><span>Home</span></a></li>
+    <li><a href="http://127.0.0.1:8000/about"><span>About</span></a></li>
+    <li><a href="http://127.0.0.1:8000/login"><span>Login</span></a></li>
+
+    <li><a href="http://127.0.0.1:8000/contact"><span>Contact</span></a></li>
+  </ul>
+</div>
+
+<div>
+    <img src="{% static 'accountant_calc.jpg' %}" length="900px" width="500px">
+</div>
+
+</body>
+</html>
